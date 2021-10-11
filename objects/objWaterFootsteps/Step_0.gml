@@ -1,0 +1,1 @@
+if(wait(stimer, 5)) instance_destroy();

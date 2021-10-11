@@ -1,0 +1,1 @@
+audio_play_sound(sndTGP, 1, true);

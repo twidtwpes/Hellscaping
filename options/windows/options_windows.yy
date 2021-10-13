@@ -1,9 +1,9 @@
 {
-  "option_windows_display_name": "Hellscape Escape",
-  "option_windows_executable_name": "Hellscape Escape",
+  "option_windows_display_name": "Hellscaping",
+  "option_windows_executable_name": "Hellscaping",
   "option_windows_version": "1.0.0.0",
   "option_windows_company_info": "Epic Pig",
-  "option_windows_product_info": "Hellscape Escape",
+  "option_windows_product_info": "Hellscaping",
   "option_windows_copyright_info": "© 2021 Casey Walsh",
   "option_windows_description_info": "Top down shooter",
   "option_windows_display_cursor": true,

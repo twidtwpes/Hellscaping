@@ -2,9 +2,12 @@ randomize();
 
 objSettings_Tracker.level_load = rmLevelOne;
 
+portal = false;
 pause = false;
+dead = false;
 spt_screenshot = noone;
 pause_select = 0;
+dead_select = 0;
 confirm = false;
 confirm_option = 0;
 screenshot_scale = 1;
@@ -182,8 +185,8 @@ var list_value = get_empty_floor(self);
 var start_x = list_value[0] * CELL_WIDTH + CELL_WIDTH/2;
 var start_y = list_value[1] * CELL_HEIGHT + CELL_HEIGHT/2;
 instance_create_layer(start_x, start_y, "Todd", objTodd);
+objTodd.hp = objSettings_Tracker.hp;
 knock_out_walls(grid_, list_value[0], list_value[1]);
-
 
 //Place enemies
 enemy_types = [objHornet, objDemon, objFetusPod, objWater];

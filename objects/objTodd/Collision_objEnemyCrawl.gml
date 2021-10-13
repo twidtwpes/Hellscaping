@@ -1,3 +1,5 @@
+if(!hascontrol) exit;
+
 if(!other.dead){
 	if(recovery_remain < 0){
 		hp-=other.ap;

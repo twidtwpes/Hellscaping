@@ -1,10 +1,15 @@
 title_menu = 0;
 pause = false;
-level_load = noone
+level_load = noone;
+dead = true;
+hp = 5;
+last_destroyed_x = 0;
+last_destroyed_y = 0;
 
 level = 1;
 stage = 1;
 kills = 0;
+time = get_timer();
 
 bullets_ammo = 0;
 shells_ammo = 0;

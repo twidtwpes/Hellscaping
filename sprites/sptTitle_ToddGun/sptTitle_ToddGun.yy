@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 0,
+  "bbox_left": 1,
   "bbox_right": 41,
   "bbox_top": 0,
-  "bbox_bottom": 32,
+  "bbox_bottom": 31,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"3c8d0a3c-a5c7-4375-9d25-2af47fed0142","path":"sprites/sptTitle_ToddGun/sptTitle_ToddGun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"3c8d0a3c-a5c7-4375-9d25-2af47fed0142","path":"sprites/sptTitle_ToddGun/sptTitle_ToddGun.yy",},"LayerId":{"name":"bfc80927-7f4c-42a9-9b0b-730d5638baa1","path":"sprites/sptTitle_ToddGun/sptTitle_ToddGun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sptTitle_ToddGun","path":"sprites/sptTitle_ToddGun/sptTitle_ToddGun.yy",},"resourceVersion":"1.0","name":"3c8d0a3c-a5c7-4375-9d25-2af47fed0142","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"f371bc72-c219-4093-8f5c-ace59a44d318","path":"sprites/sptTitle_ToddGun/sptTitle_ToddGun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"f371bc72-c219-4093-8f5c-ace59a44d318","path":"sprites/sptTitle_ToddGun/sptTitle_ToddGun.yy",},"LayerId":{"name":"d7d79e6e-9ef1-465e-aea1-ee60e7fb6132","path":"sprites/sptTitle_ToddGun/sptTitle_ToddGun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sptTitle_ToddGun","path":"sprites/sptTitle_ToddGun/sptTitle_ToddGun.yy",},"resourceVersion":"1.0","name":"f371bc72-c219-4093-8f5c-ace59a44d318","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sptTitle_ToddGun","path":"sprites/sptTitle_ToddGun/sptTitle_ToddGun.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"9b3b0f3b-cd3b-471e-8c41-ae8333be9708","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3c8d0a3c-a5c7-4375-9d25-2af47fed0142","path":"sprites/sptTitle_ToddGun/sptTitle_ToddGun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"f8dddade-8831-4492-8ade-c4390df4e1a5","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f371bc72-c219-4093-8f5c-ace59a44d318","path":"sprites/sptTitle_ToddGun/sptTitle_ToddGun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"bfc80927-7f4c-42a9-9b0b-730d5638baa1","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d7d79e6e-9ef1-465e-aea1-ee60e7fb6132","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

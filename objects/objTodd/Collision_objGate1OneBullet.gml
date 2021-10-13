@@ -1,3 +1,5 @@
+if(!hascontrol) exit;
+
 if(recovery_remain < 0){
 	hp-=other.ap;
 	recovery_remain = recovery;

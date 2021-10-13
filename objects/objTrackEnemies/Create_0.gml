@@ -1,1 +1,2 @@
-if(layer_exists("Enemies")) enemy_count = instance_number(objHornet)
+previous_count = objSettings_Tracker.kills;
+enemy_count = 0;

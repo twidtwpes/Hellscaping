@@ -8,4 +8,4 @@ draw_set_color(c_white);
 //draw_text(10,80,objSettings_Tracker.audio_level);
 //draw_text(10,110,objSettings_Tracker.controls);
 
-//draw_text(10,20,camera_get_active());
+//draw_text(100,20,objSettings_Tracker.kills);

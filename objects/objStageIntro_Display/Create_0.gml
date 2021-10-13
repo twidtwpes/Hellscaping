@@ -1,3 +1,10 @@
+if(objSettings_Tracker.dead){
+	stage_end();
+	objSettings_Tracker.dead = false;
+}else{
+	if(instance_exists(objTrackEnemies)) objTrackEnemies.previous_count = objSettings_Tracker.kills;
+}
+
 alpha = 0;
 fadeout = false;
 fade_amount = 0.02;

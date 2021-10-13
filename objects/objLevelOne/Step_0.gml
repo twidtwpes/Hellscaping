@@ -1,5 +1,14 @@
 if(!pause && objTrackEnemies.enemy_count == 0){
-	room_goto(rmEndLevel);
+	//room_goto(rmEndLevel);
+	if(!portal){
+		objSettings_Tracker.hp = objTodd.hp;
+		var xx = objSettings_Tracker.last_destroyed_x;
+		var yy = objSettings_Tracker.last_destroyed_y;
+		instance_create_layer(round(xx), round(yy), "Portal", objPortal);
+		portal = true;
+		knock_out_walls(grid_, round((xx - CELL_WIDTH/2) / CELL_WIDTH), round((yy - CELL_HEIGHT) / CELL_HEIGHT));
+		screen_shake(8,12,0.5,0.5,14);
+	}
 }
 
 if(keyboard_check_pressed(vk_f1) || gamepad_button_check_pressed(0, gp_select)){
@@ -7,10 +16,22 @@ if(keyboard_check_pressed(vk_f1) || gamepad_button_check_pressed(0, gp_select)){
 }
 
 var pause_check = false;
-if(objSettings_Tracker.settings[? "controls"] == 0){
-	pause_check = keyboard_check_pressed(vk_escape)
-}else{
-	pause_check = gamepad_button_check_pressed(0, gp_start)
+if(!objTodd.dead){
+	if(objSettings_Tracker.settings[? "controls"] == 0){
+		pause_check = keyboard_check_pressed(vk_escape)
+	}else{
+		pause_check = gamepad_button_check_pressed(0, gp_start)
+	}
+}
+
+if(objTodd.dead && !dead){
+	dead = true;
+	dead_select = 0;
+	screen_shake(0,0,0,0,0);
+	objSettings_Tracker.pause = false;
+	pause = false;
+	objTodd.hascontrol = false;
+	objSettings_Tracker.hp = 5;
 }
 
 if(pause_check){
@@ -37,11 +58,12 @@ if(pause_check){
 		menu_fg_current = menu_fg_start;
 		pause_select = 0;
 		instance_deactivate_all(true);
-		instance_activate_object(objSettings_Tracker)
+		instance_activate_object(objSettings_Tracker);
+		instance_activate_object(objTodd);
 	}
 }
 
-if(pause){
+if(pause || dead){
 	var key_up = false;
 	var key_down = false;
 	var key_left = false;
@@ -61,7 +83,9 @@ if(pause){
 		key_right = gamepad_button_check_pressed(0,gp_padr);
 		key_enter = gamepad_button_check_pressed(0,gp_face1);
 	}
-	
+}
+
+if(pause){
 	if(confirm){
 		if(key_left) pause_select = 0;
 		if(key_right) pause_select = 1;
@@ -86,8 +110,10 @@ if(pause){
 					break;
 				case 1:
 					room_persistent = false;
-					//instance_activate_all();
 					objSettings_Tracker.pause = false;
+					objSettings_Tracker.kills = 0;
+					objSettings_Tracker.stage = 1;
+					objSettings_Tracker.level = 1;
 					if(confirm_option == 0) room_goto(rmStageIntro);
 					if(confirm_option == 1) room_goto(rmTitle2);
 					break;
@@ -154,3 +180,30 @@ if(pause){
 	}
 }
 
+if(dead){
+	if(key_left) dead_select = 0;
+	if(key_right) dead_select = 1;
+		
+	if(objSettings_Tracker.settings[? "controls"] == 0){
+		if(device_mouse_x_to_gui(0) > retry_x && device_mouse_y_to_gui(0) > retry_y && device_mouse_x_to_gui(0) < retry_x + retry_w && device_mouse_y_to_gui(0) < retry_y + retry_h){
+			dead_select = 0;
+			if(mouse_check_button_pressed(mb_left)) key_enter = true;
+		}
+		if(device_mouse_x_to_gui(0) > quit_x && device_mouse_y_to_gui(0) > quit_y && device_mouse_x_to_gui(0) < quit_x + quit_w && device_mouse_y_to_gui(0) < quit_y + quit_h){
+			dead_select = 1;
+			if(mouse_check_button_pressed(mb_left)) key_enter = true;
+		}
+	}
+	if(key_enter){
+		room_persistent = false;
+		objSettings_Tracker.pause = false;
+		switch(dead_select){
+			case 0: 
+				room_goto(rmStageIntro);
+				break;
+			case 1:
+				room_goto(rmTitle2);
+				break;
+		}
+	}
+}

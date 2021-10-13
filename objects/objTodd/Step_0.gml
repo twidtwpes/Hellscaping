@@ -3,7 +3,9 @@ if(!hascontrol) exit;
 #region Check Death
 recovery_remain--;
 if(hp <= 0){
-	room_goto(rmEndLevel);
+	objSettings_Tracker.dead = true;
+	dead = true;
+	hascontrol = false;
 }
 #endregion Check Death
 
@@ -69,6 +71,8 @@ if(_x_input == 0 && _y_input ==0){
 	sprite_index = sptToddWalk;
 	image_speed = 0.7;
 }
+x_speed_ += x_portal;
+y_speed_ += y_portal;
 #endregion Calculate Movement
 
 #region Set Gun

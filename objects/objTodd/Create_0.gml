@@ -18,6 +18,9 @@
 #macro SHOTTIMETODIE 6
 #macro ATTACKPOINTS 7
 
+dead = false;
+done = false;
+
 // Movement vars
 hit_dir = 0;
 hit_spd = 0;
@@ -25,6 +28,8 @@ hit_amt = 0;
 hit_now = false;
 x_speed_ = 0;
 y_speed_ = 0;
+x_portal = 0;
+y_portal = 0;
 max_speed_ = 2;
 acceleration_ = .5;
 recovery_remain = 0;

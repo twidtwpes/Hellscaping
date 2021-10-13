@@ -124,6 +124,9 @@ function load_hash(){
 	{
 	    show_error("Savefile integrity check failed :(", false);
 	}
+	
+	objSettings_Tracker.stats[? "session_kills"] = 0;
+	objSettings_Tracker.stats[? "session_hours"] = 0;
 }
 
 function update_save(){
@@ -201,6 +204,7 @@ function knock_out_walls(grid, _x, _y){
 	var back_id = layer_tilemap_get_id("WallTilesBack");
 	var clear_id = layer_get_id("FloorClear");
 	
+	if(grid[# _x,_y] != FLOOR) clear_wall(grid, _x, _y, front_id, back_id, edge_id, clear_id);
 	clear_wall(grid, _x-1, _y-1, front_id, back_id, edge_id, clear_id);
 	clear_wall(grid, _x, _y-1, front_id, back_id, edge_id, clear_id);
 	clear_wall(grid, _x+1, _y-1, front_id, back_id, edge_id, clear_id);
@@ -236,4 +240,20 @@ function get_weighted_value(options){
 	  if(rnd < weight_array[_i]) return _i;
 	  //rnd -= options[_i];
 	}
+}
+
+function stage_end(){
+	objSettings_Tracker.stats[? "lifetime_kills"] += objSettings_Tracker.kills;
+	objSettings_Tracker.stats[? "session_kills"] += objSettings_Tracker.kills;
+	var complete = objSettings_Tracker.level + (objSettings_Tracker.stage / 10);
+	if(objSettings_Tracker.stats[? "furthest_complete"] < complete) objSettings_Tracker.stats[? "furthest_complete"] = complete;
+	objSettings_Tracker.stats[? "lifetime_hours"] += get_timer() - objSettings_Tracker.time;
+	objSettings_Tracker.stats[? "session_hours"] += get_timer() - objSettings_Tracker.time;
+	objSettings_Tracker.time = get_timer();
+	if(objSettings_Tracker.dead){
+		objSettings_Tracker.level = 1;
+		objSettings_Tracker.stage = 1;
+		objSettings_Tracker.kills = 0;
+	}
+	objSettings_Tracker.dead = false;
 }

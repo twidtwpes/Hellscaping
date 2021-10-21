@@ -21,7 +21,7 @@ if(entered){
 	}
 	if(wait(stime, light)){
 		var xx = irandom_range(-15, 15);
-		instance_create_layer(x + xx, y - 1000, "Portal_Light", objPortal_Light);
+		instance_create_layer(x + xx, y - 500, "Portal_Light", objPortal_Light);
 	
 		stime = get_timer();
 		light = random_range(0.05, 0.2);

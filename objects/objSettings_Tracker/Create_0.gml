@@ -19,6 +19,9 @@ fuel_ammo = 0;
 rocks_ammo = 0;
 bombs_ammo = 0;
 
+enemie_ranges = [irandom_range(8,10), irandom_range(2,4), irandom_range(2,4), irandom_range(2,5)];
+ememie_multiplier = 1;
+
 settings = ds_map_create();
 ds_map_add(settings, "fullscreen", false);
 ds_map_add(settings, "mute", true);

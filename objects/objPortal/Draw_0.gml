@@ -9,6 +9,7 @@ if(entered){
 			objSettings_Tracker.stage = 1;
 			objSettings_Tracker.level ++;
 		}
+		get_enemie_counts();		
 		room_goto(rmStageIntro);
 	}
 }else{

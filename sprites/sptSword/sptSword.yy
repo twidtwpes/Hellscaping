@@ -24,9 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"cef8a922-6cb3-4cec-a33a-e82eb638e6f5","path":"sprites/sptSword/sptSword.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"cef8a922-6cb3-4cec-a33a-e82eb638e6f5","path":"sprites/sptSword/sptSword.yy",},"LayerId":{"name":"39665088-ca6b-4d80-87b4-7e6e6beb5906","path":"sprites/sptSword/sptSword.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sptSword","path":"sprites/sptSword/sptSword.yy",},"resourceVersion":"1.0","name":"cef8a922-6cb3-4cec-a33a-e82eb638e6f5","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"b36f8cc9-5b95-4841-8323-cbbc013960a6","path":"sprites/sptSword/sptSword.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"b36f8cc9-5b95-4841-8323-cbbc013960a6","path":"sprites/sptSword/sptSword.yy",},"LayerId":{"name":"9d1125b6-a480-4200-9762-ffacb7f8773d","path":"sprites/sptSword/sptSword.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sptSword","path":"sprites/sptSword/sptSword.yy",},"resourceVersion":"1.0","name":"b36f8cc9-5b95-4841-8323-cbbc013960a6","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"fe818045-1176-4ca2-839b-c2ff395415e6","path":"sprites/sptSword/sptSword.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"fe818045-1176-4ca2-839b-c2ff395415e6","path":"sprites/sptSword/sptSword.yy",},"LayerId":{"name":"9d1125b6-a480-4200-9762-ffacb7f8773d","path":"sprites/sptSword/sptSword.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sptSword","path":"sprites/sptSword/sptSword.yy",},"resourceVersion":"1.0","name":"fe818045-1176-4ca2-839b-c2ff395415e6","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sptSword","path":"sprites/sptSword/sptSword.yy",},
@@ -36,12 +39,13 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 1.0,
+    "length": 2.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"4a9f4970-e19a-4de3-8368-8ac4e00c73de","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"cef8a922-6cb3-4cec-a33a-e82eb638e6f5","path":"sprites/sptSword/sptSword.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"5e559563-d27a-49af-b4d3-c020c4c734b3","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b36f8cc9-5b95-4841-8323-cbbc013960a6","path":"sprites/sptSword/sptSword.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"4850a41a-e67a-49ef-9ecb-b584e0ba76b1","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fe818045-1176-4ca2-839b-c2ff395415e6","path":"sprites/sptSword/sptSword.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -65,12 +69,12 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"39665088-ca6b-4d80-87b4-7e6e6beb5906","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9d1125b6-a480-4200-9762-ffacb7f8773d","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Guns",
-    "path": "folders/Sprites/Guns.yy",
+    "name": "Melee",
+    "path": "folders/Sprites/Weapons/Melee.yy",
   },
   "resourceVersion": "1.0",
   "name": "sptSword",

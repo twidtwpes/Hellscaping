@@ -1,5 +1,5 @@
 var dir = point_direction(x, y, objTodd.x, objTodd.y);
-if(grid_place_meeting(self, objLevelOne.grid_)){
+if(grid_place_meeting(self, objLevelOne.grid_) || place_meeting(x, y, objFloorBorder)){
 	direction += 15;
 }else{
 	direction = dir;

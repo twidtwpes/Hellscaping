@@ -16,6 +16,9 @@ if(!dead){
 			direction = dir;
 			speed = 3;
 		}
+
+		dead_pickup(self, false, false, objSpecial_Pellet);
+		
 		screen_shake(5,8,0.4,0.4,8);
 		instance_destroy();
 	}

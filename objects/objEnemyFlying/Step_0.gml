@@ -34,7 +34,7 @@ if(!dead){
 	}
 	
 	// Check collision
-	if(grid_place_meeting(self, objLevelOne.grid_)){
+	if(grid_place_meeting(self, objLevelOne.grid_) || place_meeting(x, y, objFloorBorder)){
 		//speed = -speed;
 		direction += 90;
 	}
@@ -50,3 +50,5 @@ if(!dead){
 	//direction = 0;
 	//speed = 0;
 }
+
+if(wait(stime, explosion_delay)) explosion = false;

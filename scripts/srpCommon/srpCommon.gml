@@ -257,3 +257,60 @@ function stage_end(){
 	}
 	objSettings_Tracker.dead = false;
 }
+
+function get_enemie_counts(){
+	//hornet_range
+	//demon_range
+	//fetus_range
+	//water_range
+	switch(objSettings_Tracker.stage){
+		case 1:
+			objSettings_Tracker.enemie_ranges = [irandom_range(8,10), irandom_range(2,4), irandom_range(2,4), irandom_range(2,5)];
+			break;
+		case 3:
+			objSettings_Tracker.enemie_ranges = [irandom_range(12,14), irandom_range(2,6), irandom_range(4,8), irandom_range(3,6)];
+			break;
+		case 4:
+			objSettings_Tracker.enemie_ranges = [irandom_range(12,18), irandom_range(4,8), irandom_range(4,11), irandom_range(3,6)];
+			break;
+	}
+	objSettings_Tracker.ememie_multiplier = objSettings_Tracker.level * 0.75;
+}
+
+function dead_pickup(obj, hlt, amo, plt){
+	var spill = irandom_range(obj.pelletL, obj.pelletH);
+	for(var i = 0; i < spill; i++){
+		instance_create_layer(obj.x, obj.y, "Pickups", plt);
+	}
+	if(objTodd.hp < objTodd.hp_max && hlt){
+		var hlt_drop = irandom_range(1, 10);
+		if(hlt_drop == 1) instance_create_layer(obj.x, obj.y, "Pickups", objHealth);
+	}
+	if(amo){
+		var hlt_drop = irandom_range(1, 10);
+		if(hlt_drop == 1) instance_create_layer(obj.x, obj.y, "Pickups", objAmmo);
+	}
+}
+
+function set_weapon(gun){
+	objTodd.currentGun = gun;
+	objTodd.gunsprite =  objTodd.guns[objTodd.currentGun, GUNSPRITE];
+	objTodd.reloadtime =  objTodd.guns[objTodd.currentGun, RELOADTIME];
+	objTodd.recoilstart =  objTodd.guns[objTodd.currentGun, RECOILSTART];
+	objTodd.shotamount =  objTodd.guns[objTodd.currentGun, SHOTAMOUNT];
+	objTodd.shotspread =  objTodd.guns[objTodd.currentGun, SHOTSPREAD];
+	objTodd.shotspeed =  objTodd.guns[objTodd.currentGun, SHOTSPEED];
+	objTodd.shotbuffer =  objTodd.guns[objTodd.currentGun, SHOTBUFFER];
+	objTodd.attackpoints = objTodd.guns[objTodd.currentGun, ATTACKPOINTS];
+	objTodd.xorgin = objTodd.guns[objTodd.currentGun, XORGIN];
+	objTodd.yorgin = objTodd.guns[objTodd.currentGun, YORGIN];
+	objTodd.bulletobj = objTodd.guns[objTodd.currentGun, BULLETOBJ];
+	objTodd.bulletspt = objTodd.guns[objTodd.currentGun, BULLETSPT];
+	objTodd.bulletsnd = objTodd.guns[objTodd.currentGun, BULLETSND];
+	objTodd.bulletshake = objTodd.guns[objTodd.currentGun, BULLETSHAKE];
+	objTodd.bulletamount = objTodd.guns[objTodd.currentGun, BULLETAMOUNT];
+	objTodd.bulletangle = objTodd.guns[objTodd.currentGun, BULLETANGLE];
+	objTodd.bulletindex = objTodd.guns[objTodd.currentGun, BULLETINDEX];
+	objTodd.reloadindex = objTodd.guns[objTodd.currentGun, RELOADINDEX];
+	objTodd.weapon_xoffset = sprite_get_xoffset(objTodd.gunsprite);
+}

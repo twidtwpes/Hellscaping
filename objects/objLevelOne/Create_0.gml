@@ -1,5 +1,10 @@
 randomize();
 
+hornet_range = round(objSettings_Tracker.enemie_ranges[0] * objSettings_Tracker.ememie_multiplier);
+demon_range = round(objSettings_Tracker.enemie_ranges[1] * objSettings_Tracker.ememie_multiplier);
+fetus_range = round(objSettings_Tracker.enemie_ranges[2] * objSettings_Tracker.ememie_multiplier);
+water_range = round(objSettings_Tracker.enemie_ranges[3] * objSettings_Tracker.ememie_multiplier);
+
 objSettings_Tracker.level_load = rmLevelOne;
 
 portal = false;
@@ -61,7 +66,7 @@ ds_grid_set_region(grid_,0,0,width_,height_,VOID);
 var _controller_x = width_ div 2;
 var _controller_y = height_ div 2;
 var _controller_direction = irandom(3);
-var _steps = 400;
+var _steps = grid_amount;
 
 //var _player_start_x = _controller_x * CELL_WIDTH + CELL_WIDTH/2;
 //var _player_start_y = _controller_y * CELL_HEIGHT + CELL_HEIGHT/2;
@@ -84,11 +89,11 @@ repeat (_steps){
 	_controller_y += _y_direction;
 	
 	// Maker sure we don't go outside the grid
-	if(_controller_x < 4 || _controller_x >= width_ - 4){
-		_controller_x += -_x_direction * 4;
+	if(_controller_x < 10 || _controller_x >= width_ - 10){
+		_controller_x += -_x_direction * 10;
 	}
-	if(_controller_y < 4 || _controller_y >= height_ - 4){
-		_controller_y += -_y_direction * 4;
+	if(_controller_y < 10 || _controller_y >= height_ - 10){
+		_controller_y += -_y_direction * 10;
 	}
 }
 
@@ -137,14 +142,6 @@ for(var _y = 1; _y < height_-1; _y++){
 	}
 }
 
-////Place Todd
-//var list_value = get_empty_floor(self);
-//var start_x = list_value[0] * CELL_WIDTH + CELL_WIDTH/2;
-//var start_y = list_value[1] * CELL_HEIGHT + CELL_HEIGHT/2;
-//instance_create_layer(start_x, start_y, "Todd", objTodd);
-//knock_out_walls(grid_, list_value[0], list_value[1]);
-
-
 // Placing tiles
 for(var _y = 1; _y < height_-1; _y++){
 	for(var _x = 1; _x < width_ - 1; _x++){
@@ -190,13 +187,16 @@ knock_out_walls(grid_, list_value[0], list_value[1]);
 
 //Place enemies
 enemy_types = [objHornet, objDemon, objFetusPod, objWater];
-enemy_counts = [irandom_range(10,10),irandom_range(10,10),irandom_range(10,10),irandom_range(10,10)];
+enemy_counts = [hornet_range, demon_range, fetus_range, water_range];
+//enemy_counts = [0,0,0,0];
 enemy_layers = ["EnemiesFlying", "EnemiesGrounded", "EnemiesGrounded", "EnemiesUnderground"];
 enemy_offset = [[0,0], [0,0], [0,0], [-(CELL_WIDTH/2),-(CELL_HEIGHT/2)]];
 enemy_knockout = [false, true, false, true];
 for(var i = 0; i < array_length(enemy_types); i++){
 	for(var j = 1; j <= enemy_counts[i]; j++){
-		var list_value = get_empty_floor(self);
+		do{
+			var list_value = get_empty_floor(self);
+		}until(!collision_circle(list_value[0], list_value[1], 128, objTodd, false, true))
 		var start_x = list_value[0] * CELL_WIDTH + CELL_WIDTH/2 + enemy_offset[i][0];
 		var start_y = list_value[1] * CELL_HEIGHT + CELL_HEIGHT/2 + enemy_offset[i][1];
 		instance_create_layer(start_x, start_y, enemy_layers[i], enemy_types[i]);
@@ -205,13 +205,25 @@ for(var i = 0; i < array_length(enemy_types); i++){
 }
 
 //Place pickups
-pickup_types = [objWeapons_Box, objSpecial_Box, objUltra_Box];
-pickup_counts = [irandom_range(10,10),irandom_range(10,10),irandom_range(10,10)];
+pickup_types = [objWeapons_Box, objSpecial_Box, objUltra_Box, objAmmo_MiniLocker, objWeapons_MiniLocker, objSpecial_MiniLocker, objUltra_MiniLocker];
+pickup_counts = [irandom_range(0,0),irandom_range(1,1),irandom_range(1,1),irandom_range(0,1),irandom_range(0,1),irandom_range(2,4),irandom_range(0,0)];
+enemy_knockout = [false, false, false, true, true, true, true];
 for(var i = 0; i < array_length(pickup_types); i++){
 	for(var j = 1; j <= pickup_counts[i]; j++){
 		var list_value = get_empty_floor(self);
 		var start_x = list_value[0] * CELL_WIDTH + CELL_WIDTH/2 -(CELL_WIDTH/2);
 		var start_y = list_value[1] * CELL_HEIGHT + CELL_HEIGHT/2 -(CELL_HEIGHT/2);
 		instance_create_layer(start_x, start_y, "Pickups", pickup_types[i]);
+		if(enemy_knockout[i]) knock_out_walls(grid_, list_value[0], list_value[1]);
+	}
+}
+
+if(objSettings_Tracker.hp < 3){
+	var medkit = irandom(2);
+	if(medkit == 2){
+		var list_value = get_empty_floor(self);
+		var start_x = list_value[0] * CELL_WIDTH + CELL_WIDTH/2 -(CELL_WIDTH/2);
+		var start_y = list_value[1] * CELL_HEIGHT + CELL_HEIGHT/2 -(CELL_HEIGHT/2);
+		instance_create_layer(start_x, start_y, "Pickups", objMedKit);
 	}
 }

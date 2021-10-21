@@ -24,9 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"84dccd42-427e-466a-ab8a-c96b6893b8c7","path":"sprites/sptKatana/sptKatana.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"84dccd42-427e-466a-ab8a-c96b6893b8c7","path":"sprites/sptKatana/sptKatana.yy",},"LayerId":{"name":"9dda4277-a405-400d-8fbc-b56b526ac7ea","path":"sprites/sptKatana/sptKatana.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sptKatana","path":"sprites/sptKatana/sptKatana.yy",},"resourceVersion":"1.0","name":"84dccd42-427e-466a-ab8a-c96b6893b8c7","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"e3b58f97-c452-46e0-897f-de621b8cf730","path":"sprites/sptKatana/sptKatana.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"e3b58f97-c452-46e0-897f-de621b8cf730","path":"sprites/sptKatana/sptKatana.yy",},"LayerId":{"name":"f647a96a-8024-44ba-9c34-71b07558f5a9","path":"sprites/sptKatana/sptKatana.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sptKatana","path":"sprites/sptKatana/sptKatana.yy",},"resourceVersion":"1.0","name":"e3b58f97-c452-46e0-897f-de621b8cf730","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"3b9747fc-5e4e-4d63-a790-6fc4eae2059c","path":"sprites/sptKatana/sptKatana.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"3b9747fc-5e4e-4d63-a790-6fc4eae2059c","path":"sprites/sptKatana/sptKatana.yy",},"LayerId":{"name":"f647a96a-8024-44ba-9c34-71b07558f5a9","path":"sprites/sptKatana/sptKatana.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sptKatana","path":"sprites/sptKatana/sptKatana.yy",},"resourceVersion":"1.0","name":"3b9747fc-5e4e-4d63-a790-6fc4eae2059c","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sptKatana","path":"sprites/sptKatana/sptKatana.yy",},
@@ -36,12 +39,13 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 1.0,
+    "length": 2.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"1bb8a24e-3cb9-435c-bfd9-a03c142f72a5","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"84dccd42-427e-466a-ab8a-c96b6893b8c7","path":"sprites/sptKatana/sptKatana.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"e37b7357-3041-4556-bbfd-92889c0ac964","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e3b58f97-c452-46e0-897f-de621b8cf730","path":"sprites/sptKatana/sptKatana.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"90f2cc34-2b71-4249-afac-2599af02b45f","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3b9747fc-5e4e-4d63-a790-6fc4eae2059c","path":"sprites/sptKatana/sptKatana.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -65,12 +69,12 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9dda4277-a405-400d-8fbc-b56b526ac7ea","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f647a96a-8024-44ba-9c34-71b07558f5a9","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Guns",
-    "path": "folders/Sprites/Guns.yy",
+    "name": "Melee",
+    "path": "folders/Sprites/Weapons/Melee.yy",
   },
   "resourceVersion": "1.0",
   "name": "sptKatana",

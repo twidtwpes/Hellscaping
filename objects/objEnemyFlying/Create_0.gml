@@ -12,7 +12,9 @@ dir_array = [0, 0, 0, 0];
 amt_array = [0, 0, 0, 0];
 xsc_array = [1, 1, 1, 1];
 
-
-
-
 alarm[0] = irandom_range(move_timer - move_timer_rnd, move_timer + move_timer_rnd);
+
+explosion = false;
+explosion_delay = 1;
+stime = get_timer();
+

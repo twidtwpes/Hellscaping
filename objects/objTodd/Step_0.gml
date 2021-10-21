@@ -15,6 +15,7 @@ var key_right = false;
 var key_up = false;
 var key_down = false;
 var key_enter = false;
+var key_weapon = false;
 	
 
 if(objSettings_Tracker.settings[? "controls"] == 0){
@@ -23,12 +24,14 @@ if(objSettings_Tracker.settings[? "controls"] == 0){
 	key_up = keyboard_check(vk_up) || keyboard_check(ord("W"));
 	key_down = keyboard_check(vk_down) || keyboard_check(ord("S"));
 	key_enter = keyboard_check_pressed(vk_enter);
+	key_weapon = keyboard_check_pressed(vk_space);
 }else{
-	key_left = gamepad_button_check_pressed(0,gp_padl);
-	key_right = gamepad_button_check_pressed(0,gp_padr);
-	key_up = gamepad_button_check_pressed(0,gp_padu);
-	key_down = gamepad_button_check_pressed(0,gp_padd);
-	key_enter = gamepad_button_check_pressed(0,gp_face1);
+	key_left = gamepad_button_check_pressed(0, gp_padl);
+	key_right = gamepad_button_check_pressed(0, gp_padr);
+	key_up = gamepad_button_check_pressed(0, gp_padu);
+	key_down = gamepad_button_check_pressed(0, gp_padd);
+	key_enter = gamepad_button_check_pressed(0, gp_face1);
+	key_weapon = gamepad_button_check_pressed(0, gp_face4);
 }
 	
 if(objSettings_Tracker.settings[? "controls"] == 1){
@@ -64,27 +67,44 @@ if(_y_input == 0){
 	y_speed_ = lerp(y_speed_, 0, .2);
 }
 
-if(_x_input == 0 && _y_input ==0){
-	sprite_index = sptToddIdel;
-	image_speed = 0.7;
+if(kick){
+	if(kick_current == 0){
+		sprite_index = sptTodd_Kick;
+		screen_shake(6,10,0.4,0.4,12);
+	}
+	kick_current++;
+	
+	//if(ev_animation_end){
+	//	image_speed = 0;
+	//}else{
+	//	image_speed = 1;
+	//}
+	
+	if(kick_current > kick_hold){
+		kick = false;
+		kick_current = 0;
+	}
 }else{
-	sprite_index = sptToddWalk;
-	image_speed = 0.7;
+	if(_x_input == 0 && _y_input ==0){
+		sprite_index = sptToddIdel;
+		image_speed = 0.7;
+	}else{
+		sprite_index = sptToddWalk;
+		image_speed = 0.7;
+	}
 }
 x_speed_ += x_portal;
 y_speed_ += y_portal;
+//if(kick){
+//	x_speed_ = x_speed_ * kick_multiplier;
+//	y_speed_ = y_speed_ * kick_multiplier;
+//}
 #endregion Calculate Movement
 
 #region Set Gun
-currentGun = REVOLVER;
-gunsprite =  guns[currentGun, GUNSPRITE];
-reloadtime =  guns[currentGun, RELOADTIME];
-recoilstart =  guns[currentGun, RECOILSTART];
-shotamount =  guns[currentGun, SHOTAMOUNT];
-shotspread =  guns[currentGun, SHOTSPREAD];
-shotspeed =  guns[currentGun, SHOTSPEED];
-shottimetodie =  guns[currentGun, SHOTTIMETODIE];
-attackpoints = guns[REVOLVER, ATTACKPOINTS];
+if(key_weapon){
+	set_weapon(BOMB);
+}
 #endregion Set Gun
 
 #region Update Gun
@@ -106,45 +126,6 @@ with(objTarget){
 }
 #endregion Move Target
 
-#region Fire Gun
-currentreload++;
-currentrecoil = 0;
-if(!mouse_check_button(mb_left) && !gamepad_button_check(0,gp_shoulderrb)){
-	firing = false;
-	currentshot = -1;
-}
-if(objSettings_Tracker.settings[? "controls"] == 0){
-	var fire = mouse_check_button(mb_left);
-}else{
-	var fire = gamepad_button_check(0,gp_shoulderrb);
-}
-if(fire && currentreload > reloadtime){
-	firing = true;
-	if(currentshot == -1) currentshot = 0;
-	if(currentshot > -1) currentshot++;
-	if(currentshot <= shotamount){
-		screen_shake(2,7,0.2,0.2,10);
-		with(instance_create_layer(x, y, "Bullets", objBulletRevolver)){
-			sp = other.shotspeed;
-			direction = other.gunangle + random_range(-other.shotspread,other.shotspread);
-			image_angle = direction;
-			ap = other.attackpoints;
-		}
-		//audio_play_sound(sndRevolver, 15, false);
-		var casing = irandom(2);
-		with(instance_create_layer(x, y, "EnemiesUnderground", objBulletCasings)){
-			image_speed = 0;
-			image_index = casing;
-			speed = 2;
-			direction = 90 + (45 * sign(other.image_xscale));
-		}
-		currentrecoil = recoilstart;
-	}else{
-		currentreload = 0;
-	}
-}
-#endregion Fire Gun
-
 #region Check Collisions/Move
 if(hit_now){
 	hit_amt--;
@@ -157,6 +138,7 @@ if(hit_now){
 }
 
 x_speed_ -= lengthdir_x(currentrecoil, gunangle);
+if(place_meeting(x + x_speed_, y, objFloorBorder)) x_speed_ = 0;
 if(place_meeting(x+x_speed_,y,objEnemyUnderground)){
 	x += (x_speed_/2);
 	water = 30;
@@ -180,6 +162,7 @@ if(x_speed_ > 0){
 }
 
 y_speed_ -= lengthdir_y(currentrecoil, gunangle);
+if(place_meeting(x, y + y_speed_, objFloorBorder)) y_speed_ = 0;
 if(place_meeting(x,y+y_speed_,objEnemyUnderground)){
 	y += (y_speed_/2);
 	water = 30;
@@ -200,3 +183,62 @@ if(y_speed_ > 0){
 	}
 }
 #endregion Check Collisions/Move
+
+#region Fire Gun
+currentreload++;
+currentbuffer++;
+currentrecoil = 0;
+//if(!mouse_check_button(mb_left) && !gamepad_button_check(0,gp_shoulderrb)){
+//	firing = false;
+//	currentshot = -1;
+//}
+if(objSettings_Tracker.settings[? "controls"] == 0){
+	var fire = mouse_check_button(mb_left);
+}else{
+	var fire = gamepad_button_check(0,gp_shoulderrb);
+}
+//if(fire && currentreload > reloadtime){
+//	firing = true;
+//}
+if(currentreload > reloadtime && firing = false){
+	currentshot = 0;
+}
+
+if(fire){
+	firing = true;
+	if((currentshot < shotamount || shotamount == -1) && currentbuffer > shotbuffer){
+		currentshot++
+		screen_shake(bulletshake[0],bulletshake[1],bulletshake[2],bulletshake[3],bulletshake[4]);
+		for(var i = 0; i < bulletamount; i++){
+			var ba = bulletangle[i];
+			var bi = bulletindex;
+			sprite_set_offset(bulletspt, xorgin - x_speed_, yorgin);
+			with(instance_create_layer(x, y, "Bullets", bulletobj)){
+				sp = other.shotspeed;
+				direction = other.gunangle + random_range(-other.shotspread,other.shotspread) + ba;
+				image_angle = direction + ba;
+				ap = other.attackpoints;
+				image_index = bi;
+			}
+		}
+		//audio_play_sound(bulletsnd, 15, false);
+		var casing_chance = irandom(1);
+		if(casing_chance == 1){
+			var casing = irandom(2);
+			with(instance_create_layer(x, y, "EnemiesUnderground", objBulletCasings)){
+				image_speed = 0;
+				image_index = casing;
+				speed = 2;
+				direction = 90 + (45 * sign(other.image_xscale));
+			}
+		}
+		currentrecoil = recoilstart;
+		currentbuffer = 0;
+		currentreload = 0;
+	}
+	
+}else{
+	firing = false;
+}
+
+#endregion Fire Gun

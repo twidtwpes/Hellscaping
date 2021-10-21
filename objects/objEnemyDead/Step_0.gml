@@ -1,6 +1,6 @@
 
 if(speed != 0){
-	if(grid_place_meeting(self, objLevelOne.grid_)){
+	if(grid_place_meeting(self, objLevelOne.grid_) || place_meeting(x, y, objFloorBorder)){
 		speed = -speed;
 		direction -= 90;
 	}

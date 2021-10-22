@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Pickups",
-    "path": "folders/Sprites/Pickups.yy",
+    "path": "folders/Sprites/Portal/Pickups.yy",
   },
   "resourceVersion": "1.0",
   "name": "sptWeapons_Pellet",

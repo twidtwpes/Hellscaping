@@ -312,5 +312,9 @@ function set_weapon(gun){
 	objTodd.bulletangle = objTodd.guns[objTodd.currentGun, BULLETANGLE];
 	objTodd.bulletindex = objTodd.guns[objTodd.currentGun, BULLETINDEX];
 	objTodd.reloadindex = objTodd.guns[objTodd.currentGun, RELOADINDEX];
+	objTodd.beam = objTodd.guns[objTodd.currentGun, BEAM];
+	objTodd.melee = objTodd.guns[objTodd.currentGun, MELEE];
+	objTodd.casings = objTodd.guns[objTodd.currentGun, CASINGS];
+	objTodd.casingfreq = objTodd.guns[objTodd.currentGun, CASINGFREQ];
 	objTodd.weapon_xoffset = sprite_get_xoffset(objTodd.gunsprite);
 }

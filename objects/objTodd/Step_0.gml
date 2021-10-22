@@ -14,26 +14,37 @@ var key_left = false;
 var key_right = false;
 var key_up = false;
 var key_down = false;
-var key_enter = false;
+var key_pickup = false;
 var key_weapon = false;
+var fire = false;
+var release = false;
+var secondary = false;
+var bomb = false;
 	
-
 if(objSettings_Tracker.settings[? "controls"] == 0){
 	key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
 	key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
 	key_up = keyboard_check(vk_up) || keyboard_check(ord("W"));
 	key_down = keyboard_check(vk_down) || keyboard_check(ord("S"));
-	key_enter = keyboard_check_pressed(vk_enter);
+	key_pickup = keyboard_check_pressed(vk_enter);
 	key_weapon = keyboard_check_pressed(vk_space);
+	fire = mouse_check_button(mb_left);
+	release = mouse_check_button_released(mb_left);
+	secondary = mouse_check_button(mb_right);
+	bomb = keyboard_check_pressed(vk_control);
 }else{
 	key_left = gamepad_button_check_pressed(0, gp_padl);
 	key_right = gamepad_button_check_pressed(0, gp_padr);
 	key_up = gamepad_button_check_pressed(0, gp_padu);
 	key_down = gamepad_button_check_pressed(0, gp_padd);
-	key_enter = gamepad_button_check_pressed(0, gp_face1);
+	key_pickup = gamepad_button_check_pressed(0, gp_face1);
 	key_weapon = gamepad_button_check_pressed(0, gp_face4);
+	fire = gamepad_button_check(0,gp_shoulderrb);
+	release = gamepad_button_check_released(0,gp_shoulderrb);
+	secondary = gamepad_button_check_released(0,gp_shoulderlb);
+	bomb = gamepad_button_check_pressed(0,gp_shoulderl);
 }
-	
+
 if(objSettings_Tracker.settings[? "controls"] == 1){
 	if(abs(gamepad_axis_value(0,gp_axislh)) > 0.2){
 		key_left = abs(min(gamepad_axis_value(0,gp_axislh),0));
@@ -103,7 +114,14 @@ y_speed_ += y_portal;
 
 #region Set Gun
 if(key_weapon){
-	set_weapon(BOMB);
+	curwep++;
+	if(curwep > 39) curwep = 0;
+	set_weapon(curwep);
+}
+if(key_pickup){
+	curwep--;
+	if(curwep < 0) curwep = 39;
+	set_weapon(curwep);
 }
 #endregion Set Gun
 
@@ -188,20 +206,13 @@ if(y_speed_ > 0){
 currentreload++;
 currentbuffer++;
 currentrecoil = 0;
-//if(!mouse_check_button(mb_left) && !gamepad_button_check(0,gp_shoulderrb)){
-//	firing = false;
-//	currentshot = -1;
-//}
-if(objSettings_Tracker.settings[? "controls"] == 0){
-	var fire = mouse_check_button(mb_left);
-}else{
-	var fire = gamepad_button_check(0,gp_shoulderrb);
-}
-//if(fire && currentreload > reloadtime){
-//	firing = true;
-//}
+
 if(currentreload > reloadtime && firing = false){
 	currentshot = 0;
+}
+
+if(release && beam){
+	with(beamobj) instance_destroy();
 }
 
 if(fire){
@@ -213,23 +224,49 @@ if(fire){
 			var ba = bulletangle[i];
 			var bi = bulletindex;
 			sprite_set_offset(bulletspt, xorgin - x_speed_, yorgin);
+			var beamexists = false;
+			if(beam && instance_exists(beamobj)){
+				with(beamobj){
+					beamexists = true;
+					var gw = glow;
+					var gg = glowing;
+					var st = stime;
+					var ix = index;
+					instance_destroy();
+				}
+			}
 			with(instance_create_layer(x, y, "Bullets", bulletobj)){
 				sp = other.shotspeed;
 				direction = other.gunangle + random_range(-other.shotspread,other.shotspread) + ba;
 				image_angle = direction + ba;
 				ap = other.attackpoints;
 				image_index = bi;
+				other.beamobj = self;
+				if(beamexists){
+					glow = gw;
+					glowing = gg;
+					stime = st;
+					index = ix;
+				}
+				if(other.melee != 0){
+					image_yscale = other.xscale;
+					other.startmelee = other.gunangle;
+					other.currentmelee = 0;
+					other.meleeaction = true;
+				}
 			}
 		}
 		//audio_play_sound(bulletsnd, 15, false);
-		var casing_chance = irandom(1);
-		if(casing_chance == 1){
-			var casing = irandom(2);
-			with(instance_create_layer(x, y, "EnemiesUnderground", objBulletCasings)){
-				image_speed = 0;
-				image_index = casing;
-				speed = 2;
-				direction = 90 + (45 * sign(other.image_xscale));
+		if(casings != noone){
+			var casing_chance = irandom(casingfreq);
+			if(casing_chance == 1){
+				var casing = irandom(2);
+				with(instance_create_layer(x, y, "EnemiesUnderground", casings)){
+					image_speed = 0;
+					image_index = casing;
+					speed = 2;
+					direction = 90 + (45 * sign(other.image_xscale));
+				}
 			}
 		}
 		currentrecoil = recoilstart;

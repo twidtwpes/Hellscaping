@@ -20,11 +20,18 @@ if(flash > 0){
 
 gunplaceangle = gunangle;
 if(gunangle > 90 && gunangle < 270){
-	var xscale = -1;
+	xscale = -1;
 	gunangle += xscale*180;
 }else{
-	var xscale = 1;
+	xscale = 1;
 }
+
+if(meleeaction && currentmelee < melee){
+	currentmelee += (melee / (sprite_get_speed(sptEnergy_Melee) * sprite_get_number(sptEnergy_Melee)) * 4);
+	if(xscale == 1) gunangle = startmelee + melee - currentmelee;
+	else gunangle = startmelee + melee + currentmelee;
+}
+//fps
 
 if(done){
 	draw_sprite_ext(sptToddHead, 0, x+image_xscale, y+1, image_xscale, 1, 0, c_white, 1);

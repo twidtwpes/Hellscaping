@@ -42,3 +42,11 @@ draw_text(15, 103, objSettings_Tracker.stats[? "ultra_pellets"]);
 
 //draw_text(100,20,x_portal);
 //draw_text(100,50,y_portal);
+
+
+draw_set_font(fntDebug);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_set_color(c_white);
+//draw_text(150,10,startmelee);
+//draw_text(150,10,fps);

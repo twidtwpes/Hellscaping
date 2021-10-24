@@ -66,6 +66,10 @@
 hp = 5;
 hp_max = 5;
 
+specials_pickedup = [];
+specials_pickedup_xy = [];
+specials_applied = [];
+
 dead = false;
 done = false;
 

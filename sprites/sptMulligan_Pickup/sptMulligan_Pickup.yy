@@ -2,7 +2,7 @@
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
-  "origin": 0,
+  "origin": 4,
   "preMultiplyAlpha": false,
   "edgeFiltering": false,
   "collisionTolerance": 0,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"ef790c2f-9e74-4735-8ab6-d4fc78164af8","path":"sprites/sptMulligan/sptMulligan.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"ef790c2f-9e74-4735-8ab6-d4fc78164af8","path":"sprites/sptMulligan/sptMulligan.yy",},"LayerId":{"name":"1473553e-30f6-40a3-aee7-cc0c0eac4a0a","path":"sprites/sptMulligan/sptMulligan.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sptMulligan","path":"sprites/sptMulligan/sptMulligan.yy",},"resourceVersion":"1.0","name":"ef790c2f-9e74-4735-8ab6-d4fc78164af8","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"ef790c2f-9e74-4735-8ab6-d4fc78164af8","path":"sprites/sptMulligan_Pickup/sptMulligan_Pickup.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"ef790c2f-9e74-4735-8ab6-d4fc78164af8","path":"sprites/sptMulligan_Pickup/sptMulligan_Pickup.yy",},"LayerId":{"name":"1473553e-30f6-40a3-aee7-cc0c0eac4a0a","path":"sprites/sptMulligan_Pickup/sptMulligan_Pickup.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sptMulligan_Pickup","path":"sprites/sptMulligan_Pickup/sptMulligan_Pickup.yy",},"resourceVersion":"1.0","name":"ef790c2f-9e74-4735-8ab6-d4fc78164af8","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sptMulligan","path":"sprites/sptMulligan/sptMulligan.yy",},
+    "spriteId": {"name":"sptMulligan_Pickup","path":"sprites/sptMulligan_Pickup/sptMulligan_Pickup.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"9439a375-ce92-4ff3-a093-a36a096af48b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ef790c2f-9e74-4735-8ab6-d4fc78164af8","path":"sprites/sptMulligan/sptMulligan.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"9439a375-ce92-4ff3-a093-a36a096af48b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ef790c2f-9e74-4735-8ab6-d4fc78164af8","path":"sprites/sptMulligan_Pickup/sptMulligan_Pickup.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -54,13 +54,13 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 0,
-    "yorigin": 0,
+    "xorigin": 10,
+    "yorigin": 10,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sptMulligan","path":"sprites/sptMulligan/sptMulligan.yy",},
+    "parent": {"name":"sptMulligan_Pickup","path":"sprites/sptMulligan_Pickup/sptMulligan_Pickup.yy",},
     "resourceVersion": "1.3",
-    "name": "sptMulligan",
+    "name": "sptMulligan_Pickup",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Pickups/Specials.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sptMulligan",
+  "name": "sptMulligan_Pickup",
   "tags": [],
   "resourceType": "GMSprite",
 }

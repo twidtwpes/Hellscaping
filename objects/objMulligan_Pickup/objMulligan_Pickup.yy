@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sptMulligan",
-    "path": "sprites/sptMulligan/sptMulligan.yy",
+    "name": "sptMulligan_Pickup",
+    "path": "sprites/sptMulligan_Pickup/sptMulligan_Pickup.yy",
   },
   "solid": false,
   "visible": true,
@@ -25,13 +25,15 @@
   "physicsShapePoints": [],
   "eventList": [],
   "properties": [],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"pickup","path":"objects/objPickup/objPickup.yy",},"objectId":{"name":"objPickup","path":"objects/objPickup/objPickup.yy",},"value":"mulligan_pickup","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
     "name": "Specials",
     "path": "folders/Objects/Pickups/Specials.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objMulligan",
+  "name": "objMulligan_Pickup",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sptDuelWield",
-    "path": "sprites/sptDuelWield/sptDuelWield.yy",
+    "name": "sptMoreHealth_Pickup",
+    "path": "sprites/sptMoreHealth_Pickup/sptMoreHealth_Pickup.yy",
   },
   "solid": false,
   "visible": true,
@@ -25,13 +25,15 @@
   "physicsShapePoints": [],
   "eventList": [],
   "properties": [],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"pickup","path":"objects/objPickup/objPickup.yy",},"objectId":{"name":"objPickup","path":"objects/objPickup/objPickup.yy",},"value":"morehealth_pickup","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
     "name": "Specials",
     "path": "folders/Objects/Pickups/Specials.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objDuelWield",
+  "name": "objMoreHealth_Pickup",
   "tags": [],
   "resourceType": "GMObject",
 }

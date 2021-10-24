@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sptTelekenisis",
-    "path": "sprites/sptTelekenisis/sptTelekenisis.yy",
+    "name": "sptTelekenisis_Pickup",
+    "path": "sprites/sptTelekenisis_Pickup/sptTelekenisis_Pickup.yy",
   },
   "solid": false,
   "visible": true,
@@ -26,7 +26,7 @@
   "eventList": [],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"pickup","path":"objects/objPickup/objPickup.yy",},"objectId":{"name":"objPickup","path":"objects/objPickup/objPickup.yy",},"value":"\"none\"","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"pickup","path":"objects/objPickup/objPickup.yy",},"objectId":{"name":"objPickup","path":"objects/objPickup/objPickup.yy",},"value":"telekenisis_pickup","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"radius","path":"objects/objPickup/objPickup.yy",},"objectId":{"name":"objPickup","path":"objects/objPickup/objPickup.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
@@ -34,7 +34,7 @@
     "path": "folders/Objects/Pickups/Specials.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objTelekenisis",
+  "name": "objTelekenisis_Pickup",
   "tags": [],
   "resourceType": "GMObject",
 }

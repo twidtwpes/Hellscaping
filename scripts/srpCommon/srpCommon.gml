@@ -319,8 +319,11 @@ function set_weapon(gun){
 	objTodd.weapon_xoffset = sprite_get_xoffset(objTodd.gunsprite);
 }
 
-function get_pickup(pickup){
+function get_pickup(pickup, pickup_object){
 	if(string_count("pellets", pickup) > 0){
 			objSettings_Tracker.stats[? pickup]++;
+	}if(string_count("pickup", pickup) > 0){
+		objTodd.specials_pickedup[array_length(objTodd.specials_pickedup)] = pickup_object.sprite_index;
+		objTodd.specials_pickedup_xy[array_length(objTodd.specials_pickedup_xy)] = [pickup_object.x, pickup_object.y];
 	}
 }

@@ -2,7 +2,7 @@
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
-  "origin": 0,
+  "origin": 4,
   "preMultiplyAlpha": false,
   "edgeFiltering": false,
   "collisionTolerance": 0,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"e55ca314-02d1-43c4-a434-22b34b12cf63","path":"sprites/sptMoreHealth/sptMoreHealth.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e55ca314-02d1-43c4-a434-22b34b12cf63","path":"sprites/sptMoreHealth/sptMoreHealth.yy",},"LayerId":{"name":"87da48c7-1bb4-4409-99ce-1da03e980645","path":"sprites/sptMoreHealth/sptMoreHealth.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sptMoreHealth","path":"sprites/sptMoreHealth/sptMoreHealth.yy",},"resourceVersion":"1.0","name":"e55ca314-02d1-43c4-a434-22b34b12cf63","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"c289817a-4090-4042-ad77-1dd0772654b7","path":"sprites/sptTelekenisis_Pickup/sptTelekenisis_Pickup.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"c289817a-4090-4042-ad77-1dd0772654b7","path":"sprites/sptTelekenisis_Pickup/sptTelekenisis_Pickup.yy",},"LayerId":{"name":"b264c094-0804-4f6c-9157-49011159f3c6","path":"sprites/sptTelekenisis_Pickup/sptTelekenisis_Pickup.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sptTelekenisis_Pickup","path":"sprites/sptTelekenisis_Pickup/sptTelekenisis_Pickup.yy",},"resourceVersion":"1.0","name":"c289817a-4090-4042-ad77-1dd0772654b7","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sptMoreHealth","path":"sprites/sptMoreHealth/sptMoreHealth.yy",},
+    "spriteId": {"name":"sptTelekenisis_Pickup","path":"sprites/sptTelekenisis_Pickup/sptTelekenisis_Pickup.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"c2660634-e33a-4fe3-bdf4-df06af2bc9db","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e55ca314-02d1-43c4-a434-22b34b12cf63","path":"sprites/sptMoreHealth/sptMoreHealth.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"e2c202de-75ac-4e1c-900d-0a225cf7127a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c289817a-4090-4042-ad77-1dd0772654b7","path":"sprites/sptTelekenisis_Pickup/sptTelekenisis_Pickup.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -54,18 +54,18 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 0,
-    "yorigin": 0,
+    "xorigin": 10,
+    "yorigin": 10,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sptMoreHealth","path":"sprites/sptMoreHealth/sptMoreHealth.yy",},
+    "parent": {"name":"sptTelekenisis_Pickup","path":"sprites/sptTelekenisis_Pickup/sptTelekenisis_Pickup.yy",},
     "resourceVersion": "1.3",
-    "name": "sptMoreHealth",
+    "name": "sptTelekenisis_Pickup",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"87da48c7-1bb4-4409-99ce-1da03e980645","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b264c094-0804-4f6c-9157-49011159f3c6","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Pickups/Specials.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sptMoreHealth",
+  "name": "sptTelekenisis_Pickup",
   "tags": [],
   "resourceType": "GMSprite",
 }

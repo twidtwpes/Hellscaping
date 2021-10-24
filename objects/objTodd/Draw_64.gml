@@ -40,8 +40,13 @@ draw_text(15, 83, objSettings_Tracker.stats[? "special_pellets"]);
 draw_set_color(color_ultra);
 draw_text(15, 103, objSettings_Tracker.stats[? "ultra_pellets"]);
 
-//draw_text(100,20,x_portal);
-//draw_text(100,50,y_portal);
+draw_set_valign(fa_top);
+draw_set_halign(fa_right);
+var xx = 140;
+for(var i = 0; i < array_length(specials_pickedup); i++){
+	draw_sprite(specials_pickedup[i], 0, 12, xx);
+	xx+=20;
+}
 
 
 draw_set_font(fntDebug);

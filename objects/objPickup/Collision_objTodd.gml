@@ -1,3 +1,3 @@
-get_pickup(pickup);
+get_pickup(pickup, pickup_object);
 save_settings();
 instance_destroy();

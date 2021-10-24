@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "objPellet",
-    "path": "objects/objPellet/objPellet.yy",
+    "name": "objPickup",
+    "path": "objects/objPickup/objPickup.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -26,7 +26,8 @@
   "eventList": [],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"pellet","path":"objects/objPellet/objPellet.yy",},"objectId":{"name":"objPellet","path":"objects/objPellet/objPellet.yy",},"value":"weapon_pellets","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"pickup","path":"objects/objPickup/objPickup.yy",},"objectId":{"name":"objPickup","path":"objects/objPickup/objPickup.yy",},"value":"weapon_pellets","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"rotation_range","path":"objects/objPickup/objPickup.yy",},"objectId":{"name":"objPickup","path":"objects/objPickup/objPickup.yy",},"value":"5","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Pickups",

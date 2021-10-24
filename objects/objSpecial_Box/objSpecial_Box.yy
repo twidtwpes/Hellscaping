@@ -28,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Pickups",
-    "path": "folders/Objects/Pickups.yy",
+    "name": "Objects",
+    "path": "folders/Objects/Pickups/Objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "objSpecial_Box",

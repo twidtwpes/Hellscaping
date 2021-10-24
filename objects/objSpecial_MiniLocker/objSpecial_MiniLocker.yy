@@ -29,8 +29,8 @@
     {"propertyId":{"name":"spt_destroyed","path":"objects/objMiniLocker/objMiniLocker.yy",},"objectId":{"name":"objMiniLocker","path":"objects/objMiniLocker/objMiniLocker.yy",},"value":"sptSpecial_MiniLockerDestroyed","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Pickups",
-    "path": "folders/Objects/Pickups.yy",
+    "name": "Objects",
+    "path": "folders/Objects/Pickups/Objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "objSpecial_MiniLocker",

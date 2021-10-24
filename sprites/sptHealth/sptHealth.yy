@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Pickups",
-    "path": "folders/Sprites/Portal/Pickups.yy",
+    "path": "folders/Sprites/Pickups.yy",
   },
   "resourceVersion": "1.0",
   "name": "sptHealth",

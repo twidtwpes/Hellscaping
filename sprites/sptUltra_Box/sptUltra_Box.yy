@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Pickups",
-    "path": "folders/Sprites/Portal/Pickups.yy",
+    "name": "Objects",
+    "path": "folders/Sprites/Pickups/Objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "sptUltra_Box",

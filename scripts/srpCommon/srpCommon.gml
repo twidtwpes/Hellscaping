@@ -318,3 +318,9 @@ function set_weapon(gun){
 	objTodd.casingfreq = objTodd.guns[objTodd.currentGun, CASINGFREQ];
 	objTodd.weapon_xoffset = sprite_get_xoffset(objTodd.gunsprite);
 }
+
+function get_pickup(pickup){
+	if(string_count("pellets", pickup) > 0){
+			objSettings_Tracker.stats[? pickup]++;
+	}
+}

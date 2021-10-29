@@ -181,7 +181,7 @@ if(x_speed_ > 0){
 
 y_speed_ -= lengthdir_y(currentrecoil, gunangle);
 if(place_meeting(x, y + y_speed_, objFloorBorder)) y_speed_ = 0;
-if(place_meeting(x,y+y_speed_,objEnemyUnderground)){
+if(place_meeting(x,y+y_speed_,objEnemyUnderground) && !check_special(BOOTS)){
 	y += (y_speed_/2);
 	water = 30;
 }else{
@@ -279,3 +279,8 @@ if(fire){
 }
 
 #endregion Fire Gun
+
+if(newstage){
+	if(check_special(MOREHEALTH)) hp_max = 8;
+	newstage = false;
+}

@@ -67,8 +67,12 @@ hp = 5;
 hp_max = 5;
 
 specials_pickedup = [];
-specials_pickedup_xy = [];
+specials_pickedup_y = [];
+specials_pickedup_text = [];
 specials_applied = [];
+specials_pickup_speed = 0.1;
+special_blink = true;
+special_blink_current = 0;
 
 dead = false;
 done = false;
@@ -1079,3 +1083,7 @@ instance_create_layer(x, y, "Todd", objCamera);
 
 set_weapon(REVOLVER);
 curwep = 0;
+
+specials_applied = objSettings_Tracker.specials_applied;
+specials_list = get_specials();
+newstage = true;

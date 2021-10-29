@@ -40,18 +40,32 @@ draw_text(15, 83, objSettings_Tracker.stats[? "special_pellets"]);
 draw_set_color(color_ultra);
 draw_text(15, 103, objSettings_Tracker.stats[? "ultra_pellets"]);
 
-draw_set_valign(fa_top);
-draw_set_halign(fa_right);
-var xx = 140;
-for(var i = 0; i < array_length(specials_pickedup); i++){
-	draw_sprite(specials_pickedup[i], 0, 12, xx);
-	xx+=20;
-}
-
-
-draw_set_font(fntDebug);
+draw_set_font(fntMessage);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_set_color(c_white);
+var yy = 140;
+if(array_length(specials_pickedup) > 0){
+	special_blink_current++;
+	if(special_blink_current > 20){
+		special_blink = !special_blink;
+		special_blink_current = 0;
+	}
+}
+for(var i = 0; i < array_length(specials_pickedup); i++){
+	if(specials_pickedup_y[i] > yy){
+		specials_pickedup_y[i] = lerp(specials_pickedup_y[i], yy, specials_pickup_speed);
+		if(special_blink) draw_text(28,specials_pickedup_y[i] - 6,specials_pickedup_text[i]);
+	}
+	draw_sprite(specials_pickedup[i], 0, 12, specials_pickedup_y[i]);
+	yy+=20;
+}
+
+var xx = 460;
+for(var i = 0; i < array_length(specials_applied); i++){
+	draw_sprite(specials_list[specials_applied[i]], 0, xx, 20);
+	xx-=25;
+}
+
 //draw_text(150,10,startmelee);
 //draw_text(150,10,fps);

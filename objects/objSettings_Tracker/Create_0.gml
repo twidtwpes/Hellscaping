@@ -19,6 +19,9 @@ fuel_ammo = 0;
 rocks_ammo = 0;
 bombs_ammo = 0;
 
+specials_collected = [];
+specials_applied = [];
+
 enemie_ranges = [irandom_range(8,10), irandom_range(2,4), irandom_range(2,4), irandom_range(2,5)];
 ememie_multiplier = 1;
 
@@ -47,3 +50,5 @@ ds_map_add(stats, "ultra_pellets", 0);
 ds_map_add(stats, "weapon_lockers_available", []);
 ds_map_add(stats, "special_lockers_available", []);
 ds_map_add(stats, "ultra_lockers_available", []);
+
+specials_applied[0] = DEADSHOVE;

@@ -1,3 +1,7 @@
+if(checkshove){
+	if(check_special(DEADSHOVE)) speed = speed * 2;
+	checkshove = false;
+}
 
 if(speed != 0){
 	if(grid_place_meeting(self, objLevelOne.grid_) || place_meeting(x, y, objFloorBorder)){

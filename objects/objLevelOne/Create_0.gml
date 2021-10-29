@@ -199,7 +199,10 @@ for(var i = 0; i < array_length(enemy_types); i++){
 		}until(!collision_circle(list_value[0], list_value[1], 128, objTodd, false, true))
 		var start_x = list_value[0] * CELL_WIDTH + CELL_WIDTH/2 + enemy_offset[i][0];
 		var start_y = list_value[1] * CELL_HEIGHT + CELL_HEIGHT/2 + enemy_offset[i][1];
-		instance_create_layer(start_x, start_y, enemy_layers[i], enemy_types[i]);
+		with(instance_create_layer(start_x, start_y, enemy_layers[i], enemy_types[i])){
+			var h = hp;
+			if(check_special(BONEBREAKER)) hp = floor(h / 2);
+		}
 		if(enemy_knockout[i]) knock_out_walls(grid_, list_value[0], list_value[1]);
 	}
 }

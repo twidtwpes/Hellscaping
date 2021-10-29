@@ -9,8 +9,9 @@ if(entered){
 			objSettings_Tracker.stage = 1;
 			objSettings_Tracker.level ++;
 		}
-		get_enemie_counts();		
-		room_goto(rmStageIntro);
+		get_enemie_counts();
+		objSettings_Tracker.specials_collected = objTodd.specials_pickedup;
+		room_goto(rmSpecials);
 	}
 }else{
 	if(fadeout){

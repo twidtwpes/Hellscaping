@@ -15,4 +15,6 @@ if(alpha < 0){
 
 objStageIntro_Background.image_alpha = alpha;
 
-if(wait(stime, 3)) room_goto(rmLevelOne);
+if(wait(stime, 3)){
+	room_goto(rmLevelOne);
+}

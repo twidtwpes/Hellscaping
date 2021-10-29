@@ -287,7 +287,8 @@ function dead_pickup(obj, hlt, amo, plt){
 		if(hlt_drop == 1) instance_create_layer(obj.x, obj.y, "Pickups", objHealth);
 	}
 	if(amo){
-		var hlt_drop = irandom_range(1, 10);
+		if(check_special(AMMOHITS)) var c = 5; else var c = 10;
+		var hlt_drop = irandom_range(1, c);
 		if(hlt_drop == 1) instance_create_layer(obj.x, obj.y, "Pickups", objAmmo);
 	}
 }
@@ -322,8 +323,18 @@ function set_weapon(gun){
 function get_pickup(pickup, pickup_object){
 	if(string_count("pellets", pickup) > 0){
 			objSettings_Tracker.stats[? pickup]++;
-	}if(string_count("pickup", pickup) > 0){
-		objTodd.specials_pickedup[array_length(objTodd.specials_pickedup)] = pickup_object.sprite_index;
-		objTodd.specials_pickedup_xy[array_length(objTodd.specials_pickedup_xy)] = [pickup_object.x, pickup_object.y];
+	}if(pickup == "special"){
+		var i = array_length(objTodd.specials_pickedup);
+		objTodd.specials_pickedup[i] = pickup_object.sprite_index;
+		objTodd.specials_pickedup_y[i] = 400;
+		objTodd.specials_pickedup_text[i] = get_special_string(pickup_object.special);
 	}
+}
+
+function check_array_value(array, value){
+	var check = false;
+	for(var i = 0; i < array_length(array); i++){
+		if(array[i] == value) check = true;
+	}
+	return check;
 }

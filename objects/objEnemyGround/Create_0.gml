@@ -20,3 +20,5 @@ alarm[0] = irandom_range(move_timer - move_timer_rnd, move_timer + move_timer_rn
 explosion = false;
 explosion_delay = 1;
 stime = get_timer();
+
+		

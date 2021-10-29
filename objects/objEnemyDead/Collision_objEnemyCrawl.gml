@@ -1,0 +1,14 @@
+if(check_special(DEADSHOVE)){
+	with(other){
+		var dir = other.direction;
+		with(instance_create_layer(x, y, "Dead", objFetusDead)){
+			direction = dir;
+			speed = 10;
+		}
+
+		dead_pickup(self, false, false, objSpecial_Pellet);
+	
+		screen_shake(5,8,0.4,0.4,8);
+		instance_destroy();
+	}
+}

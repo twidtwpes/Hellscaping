@@ -2,6 +2,9 @@ if(!open){
 	if(wait(stime, etime)){
 		image_index = 1;
 		open = true;
-		instance_create_layer(x, y, "EnemiesGrounded", objFetus);
+		with(instance_create_layer(x, y, "EnemiesGrounded", objFetus)){
+			var h = hp;
+			if(check_special(BONEBREAKER)) hp = floor(h / 2);
+		}
 	}
 }

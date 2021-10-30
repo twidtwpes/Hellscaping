@@ -70,6 +70,7 @@ function get_specials(){
 }
 
 function get_special_string(pick){
+	if(pick == -1) return "None";
 	var specials = [];
 	specials[AMMOHITS] = "Ammo Hits";
 	specials[ATTRACT] = "Attract";
@@ -127,7 +128,7 @@ function get_special_index(spt){
 	specials[TORCH] = sptTorch_Special;
 	specials[WALLSHOOTER] = sptWallShooter_Special;
 	
-	var inx = 0;
+	var inx = -1;
 	for(var i = 0; i < array_length(specials); i++){
 		if(specials[i] == spt) inx = i;
 	}
@@ -137,4 +138,16 @@ function get_special_index(spt){
 
 function check_special(num){
 	return check_array_value(objSettings_Tracker.specials_applied, num)
+}
+
+function special_drop(){
+	var all_specials = get_specials();
+	var select = -1;
+	var not_available = objSettings_Tracker.specials_applied;
+	do{
+		select = irandom(array_length(all_specials) - 1);
+		show_debug_message(select);
+	}until(!check_array_value(not_available, select) && !check_array_value(objTodd.specials_pickedup, all_specials[select]));
+	
+	return select;
 }

@@ -51,4 +51,4 @@ ds_map_add(stats, "weapon_lockers_available", []);
 ds_map_add(stats, "special_lockers_available", []);
 ds_map_add(stats, "ultra_lockers_available", []);
 
-specials_applied[0] = DEADSHOVE;
+//specials_applied[0] = DEADSHOVE;

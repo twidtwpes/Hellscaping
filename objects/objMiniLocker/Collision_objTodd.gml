@@ -1,7 +1,8 @@
 if(sprite_index != spt_destroyed){
 	//other.kick = true;
 	var picks = get_specials();
-	var pick = irandom(array_length(picks) - 1);
+	//var pick = irandom(array_length(picks) - 1);
+	var pick = special_drop();
 	with(instance_create_layer(x,y,"Pickups",objSpecial)){
 		special = pick;
 		sprite_index = picks[pick];

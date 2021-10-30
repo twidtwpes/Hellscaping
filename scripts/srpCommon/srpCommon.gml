@@ -338,3 +338,11 @@ function check_array_value(array, value){
 	}
 	return check;
 }
+
+function array_combine(array1, array2){
+	var newarray = array1;
+	for(var i = 0; i < array_length(array2); i++){
+		array_push(newarray, array2[i]);
+	}
+	return newarray;
+}

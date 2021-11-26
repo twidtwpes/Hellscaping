@@ -66,6 +66,20 @@ function get_specials(){
 	specials[TELEPORT] = sptTeleport_Special;
 	specials[TORCH] = sptTorch_Special;
 	specials[WALLSHOOTER] = sptWallShooter_Special;
+	specials[TORNADO] = sptTornado_Special;
+	specials[SHIELD] = sptShield_Special;
+	specials[BOMBMAKER] = sptBombMaker_Special;
+	specials[BULLETTIME] = sptBulletTime_Special;
+	specials[SLOWMO] = sptSlowMo_Special;
+	specials[SUMMON] = sptSummon_Special;
+	specials[LIFESAVER] = sptLifeSaver_Special;
+	specials[SEEKER] = sptSeeker_Special;
+	specials[CHARGE] = sptCharge_Special;
+	specials[STEELHEART] = sptSteelHeart_Special;
+	specials[PISTOLWHIP] = sptPistolWhip_Special;
+	specials[PISTOLDART] = sptPistolDart_Special;
+	specials[GASMASK] = sptGasMask_Special;
+	specials[COMBATRELOAD] = sptCombatReload_Special;
 	return specials;
 }
 
@@ -97,6 +111,20 @@ function get_special_string(pick){
 	specials[TELEPORT] = "Teleport";
 	specials[TORCH] = "Torch";
 	specials[WALLSHOOTER] = "Wall Shooter";
+	specials[TORNADO] = "Tornado";
+	specials[SHIELD] = "Shield";
+	specials[BOMBMAKER] = "Bomb Maker";
+	specials[BULLETTIME] = "Bullet Time";
+	specials[SLOWMO] = "Slow Mo";
+	specials[SUMMON] = "Summon";
+	specials[LIFESAVER] = "Life Saver";
+	specials[SEEKER] = "Seeker";
+	specials[CHARGE] = "Charge";
+	specials[STEELHEART] = "Steel Heart";
+	specials[PISTOLWHIP] = "Pistol Whip";
+	specials[PISTOLDART] = "Pistol Dart";
+	specials[GASMASK] = "Gas Mask";
+	specials[COMBATRELOAD] = "Combat Reload";
 	return specials[pick];
 }
 
@@ -127,6 +155,20 @@ function get_special_index(spt){
 	specials[TELEPORT] = sptTeleport_Special;
 	specials[TORCH] = sptTorch_Special;
 	specials[WALLSHOOTER] = sptWallShooter_Special;
+	specials[TORNADO] = sptTornado_Special;
+	specials[SHIELD] = sptShield_Special;
+	specials[BOMBMAKER] = sptBombMaker_Special;
+	specials[BULLETTIME] = sptBulletTime_Special;
+	specials[SLOWMO] = sptSlowMo_Special;
+	specials[SUMMON] = sptSummon_Special;
+	specials[LIFESAVER] = sptLifeSaver_Special;
+	specials[SEEKER] = sptSeeker_Special;
+	specials[CHARGE] = sptCharge_Special;
+	specials[STEELHEART] = sptSteelHeart_Special;
+	specials[PISTOLWHIP] = sptPistolWhip_Special;
+	specials[PISTOLDART] = sptPistolDart_Special;
+	specials[GASMASK] = sptGasMask_Special;
+	specials[COMBATRELOAD] = sptCombatReload_Special;
 	
 	var inx = -1;
 	for(var i = 0; i < array_length(specials); i++){
